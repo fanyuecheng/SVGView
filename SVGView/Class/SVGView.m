@@ -15,6 +15,7 @@
 
 @property (nonatomic, assign) CGSize   size;
 @property (nonatomic, copy)   NSString *content;
+@property (nonatomic, strong) UIImage  *image;
 
 @end
  
@@ -102,11 +103,11 @@
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        UIView *renderSVGRoot = webView.subviews.firstObject.subviews.firstObject.subviews.firstObject.subviews.firstObject.subviews.firstObject.subviews.firstObject.subviews.firstObject.subviews.lastObject.subviews.firstObject.subviews.firstObject.subviews.firstObject;
-        NSLog(@"%@", renderSVGRoot);
         WKSnapshotConfiguration *configuration = [[WKSnapshotConfiguration alloc] init];
+        __weak __typeof(self)weakSelf = self;
         [webView takeSnapshotWithConfiguration:configuration completionHandler:^(UIImage * _Nullable snapshotImage, NSError * _Nullable error) {
-            NSLog(@"%@", snapshotImage);
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            strongSelf.image = snapshotImage;
         }];
     });
 }

@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) WKWebView *webView;
 @property (nonatomic, assign, readonly) CGSize    size;
 @property (nonatomic, copy,   readonly) NSString  *content;
+@property (nonatomic, strong, readonly) UIImage   *image;
 
 - (void)setSVGWithURL:(NSURL *)url;
 - (void)setSVGWithName:(NSString *)name;
