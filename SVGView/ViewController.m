@@ -7,8 +7,11 @@
 
 #import "ViewController.h"
 #import "SVGView.h"
+#import "SVGConvert.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) SVGConvert *convert;
 
 @end
 
@@ -27,6 +30,13 @@
     web.layer.borderColor = UIColor.redColor.CGColor;
     
     [self.view addSubview:web];
+    
+    SVGConvert *convert = [SVGConvert sharedInstance];
+    NSURL *url = [NSBundle.mainBundle URLForResource:@"mintendoo" withExtension:@"svg"];
+    [convert convertWithDatas:@[[NSData dataWithContentsOfURL:url]]
+                    completed:^(NSArray * _Nonnull imageArray, NSError * _Nonnull error) {
+        NSLog(@"%@", imageArray);
+    }];
 }
 
 

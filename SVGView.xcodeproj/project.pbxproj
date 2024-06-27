@@ -16,6 +16,7 @@
 		33406E3D2A83350A00A058A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33406E3C2A83350A00A058A7 /* main.m */; };
 		33406E462A83356300A058A7 /* SVGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33406E452A83356300A058A7 /* SVGView.m */; };
 		33406E482A83361200A058A7 /* mintendoo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 33406E472A83361200A058A7 /* mintendoo.svg */; };
+		33F84F052C2D5B030029F714 /* SVGConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F84F042C2D5B030029F714 /* SVGConvert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		33406E442A83356300A058A7 /* SVGView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVGView.h; sourceTree = "<group>"; };
 		33406E452A83356300A058A7 /* SVGView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVGView.m; sourceTree = "<group>"; };
 		33406E472A83361200A058A7 /* mintendoo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mintendoo.svg; sourceTree = "<group>"; };
+		33F84F032C2D5B030029F714 /* SVGConvert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVGConvert.h; sourceTree = "<group>"; };
+		33F84F042C2D5B030029F714 /* SVGConvert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVGConvert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 			children = (
 				33406E442A83356300A058A7 /* SVGView.h */,
 				33406E452A83356300A058A7 /* SVGView.m */,
+				33F84F032C2D5B030029F714 /* SVGConvert.h */,
+				33F84F042C2D5B030029F714 /* SVGConvert.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				33406E322A83350800A058A7 /* ViewController.m in Sources */,
 				33406E2C2A83350800A058A7 /* AppDelegate.m in Sources */,
 				33406E3D2A83350A00A058A7 /* main.m in Sources */,
+				33F84F052C2D5B030029F714 /* SVGConvert.m in Sources */,
 				33406E2F2A83350800A058A7 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

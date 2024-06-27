@@ -102,14 +102,12 @@
 
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        WKSnapshotConfiguration *configuration = [[WKSnapshotConfiguration alloc] init];
-        __weak __typeof(self)weakSelf = self;
-        [webView takeSnapshotWithConfiguration:configuration completionHandler:^(UIImage * _Nullable snapshotImage, NSError * _Nullable error) {
-            __strong __typeof(weakSelf)strongSelf = weakSelf;
-            strongSelf.image = snapshotImage;
-        }];
-    });
+    WKSnapshotConfiguration *configuration = [[WKSnapshotConfiguration alloc] init];
+    __weak __typeof(self)weakSelf = self;
+    [webView takeSnapshotWithConfiguration:configuration completionHandler:^(UIImage * _Nullable snapshotImage, NSError * _Nullable error) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        strongSelf.image = snapshotImage;
+    }];
 }
 
 #pragma mark - Get
